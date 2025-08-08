@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { UserPlus, Search, MessageCircle, Target, ArrowRight, CheckCircle } from "lucide-react";
-import { RegistrationDialog } from "./RegistrationDialog";
+import { Search, MessageCircle, Target, ArrowRight, CheckCircle } from "lucide-react";
+import { MenteeRegistrationDialog } from "@/components/MenteeRegistrationDialog";
 
 export const HowItWorksSection = () => {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
@@ -10,27 +10,20 @@ export const HowItWorksSection = () => {
   const steps = [
     {
       step: "01",
-      icon: UserPlus,
-      title: "Create Your Profile",
-      description: "Tell us about your experience, goals, and what you're looking for in a mentorship relationship.",
-      features: ["Professional background", "Learning objectives", "Availability preferences"]
-    },
-    {
-      step: "02", 
       icon: Search,
       title: "AI Finds Matches",
-      description: "Our advanced algorithm analyzes thousands of profiles to find your perfect mentorship matches.",
+      description: "Our advanced algorithm analyzes thousands of profiles to find your perfect mentor.",
       features: ["Smart compatibility scoring", "Industry expertise matching", "Goal alignment analysis"]
     },
     {
-      step: "03",
+      step: "02",
       icon: MessageCircle,
       title: "Connect & Communicate",
       description: "Start conversations with your matches and schedule your first mentorship session.",
       features: ["Secure messaging platform", "Video call integration", "Smart scheduling tools"]
     },
     {
-      step: "04",
+      step: "03",
       icon: Target,
       title: "Achieve Your Goals",
       description: "Work together to reach your objectives with ongoing support and progress tracking.",
@@ -46,7 +39,7 @@ export const HowItWorksSection = () => {
             How It <span className="text-blue-600">Works</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our streamlined process makes it easy to find and connect with the right mentorship partner in just a few steps.
+            Our streamlined process makes it easy to find and connect with the right mentor in just a few steps.
           </p>
         </div>
 
@@ -100,7 +93,7 @@ export const HowItWorksSection = () => {
                 <div className="space-y-4">
                   <h3 className="text-2xl font-bold text-foreground">Ready to Get Started?</h3>
                   <p className="text-muted-foreground">
-                    Join our community of professionals who have found their perfect mentorship match through our platform.
+                    Join our community of professionals who have found their perfect mentor through our platform.
                   </p>
                 </div>
                   
@@ -108,7 +101,7 @@ export const HowItWorksSection = () => {
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white group"
                   onClick={() => setIsRegistrationOpen(true)}
                 >
-                  Start Your Journey
+                  Find Your Mentor
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -117,10 +110,9 @@ export const HowItWorksSection = () => {
         </div>
       </div>
       
-      <RegistrationDialog 
+      <MenteeRegistrationDialog 
         isOpen={isRegistrationOpen} 
         onClose={() => setIsRegistrationOpen(false)} 
-        userType={null}
       />
     </section>
   );

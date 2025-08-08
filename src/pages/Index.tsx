@@ -1,20 +1,20 @@
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
-import { UserTypeSelector } from "@/components/UserTypeSelector";
 import { FeaturesSection } from "@/components/FeaturesSection";
-import { BrowseMentorsSection } from "@/components/BrowseMentorsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { UserTypeSelector } from "@/components/UserTypeSelector";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navigation />
-      <HeroSection />
-      <UserTypeSelector />
-      <FeaturesSection />
-      <BrowseMentorsSection />
-      <HowItWorksSection />
+      <main className="flex-1">
+        <HeroSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <UserTypeSelector />
+      </main>
       <Footer />
     </div>
   );

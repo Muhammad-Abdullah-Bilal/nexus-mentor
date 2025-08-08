@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
-import { RegistrationDialog } from "./RegistrationDialog";
 import { SignInDialog } from "./SignInDialog";
+import { MenteeRegistrationDialog } from "./MenteeRegistrationDialog";
+import { MentorRegistrationDialog } from "./MentorRegistrationDialog";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSignInOpen, setIsSignInOpen] = useState(false);
-  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const [isMentorRegistrationOpen, setIsMentorRegistrationOpen] = useState(false);
+  const [isMenteeRegistrationOpen, setIsMenteeRegistrationOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-card-border">
@@ -29,9 +31,6 @@ export const Navigation = () => {
             <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
               How It Works
             </a>
-            <a href="#browse" className="text-muted-foreground hover:text-foreground transition-colors">
-              Browse Mentors
-            </a>
             <Button 
               variant="ghost" 
               className="text-muted-foreground hover:text-foreground"
@@ -41,9 +40,9 @@ export const Navigation = () => {
             </Button>
             <Button 
               className="bg-blue-600 hover:bg-blue-700 text-white"
-              onClick={() => setIsRegistrationOpen(true)}
+              onClick={() => setIsMentorRegistrationOpen(true)}
             >
-              Get Started
+              Become a Mentor
             </Button>
           </div>
 
@@ -69,9 +68,6 @@ export const Navigation = () => {
               <a href="#how-it-works" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">
                 How It Works
               </a>
-              <a href="#browse" className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors">
-                Browse Mentors
-              </a>
               <div className="px-3 py-2 space-y-2">
                 <Button 
                   variant="ghost" 
@@ -82,9 +78,9 @@ export const Navigation = () => {
                 </Button>
                 <Button 
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                  onClick={() => setIsRegistrationOpen(true)}
+                  onClick={() => setIsMentorRegistrationOpen(true)}
                 >
-                  Get Started
+                  Become a Mentor
                 </Button>
               </div>
             </div>
@@ -93,10 +89,13 @@ export const Navigation = () => {
       </div>
       
       <SignInDialog isOpen={isSignInOpen} onClose={() => setIsSignInOpen(false)} />
-      <RegistrationDialog 
-        isOpen={isRegistrationOpen} 
-        onClose={() => setIsRegistrationOpen(false)} 
-        userType={null}
+      <MentorRegistrationDialog 
+        isOpen={isMentorRegistrationOpen} 
+        onClose={() => setIsMentorRegistrationOpen(false)} 
+      />
+      <MenteeRegistrationDialog 
+        isOpen={isMenteeRegistrationOpen} 
+        onClose={() => setIsMenteeRegistrationOpen(false)} 
       />
     </nav>
   );
