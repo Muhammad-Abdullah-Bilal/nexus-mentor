@@ -8,37 +8,25 @@ export const FeaturesSection = () => {
       icon: Brain,
       title: "AI-Powered Matching",
       description: "Our advanced algorithm analyzes your goals, experience, and preferences to find perfect mentorship matches.",
-      gradient: "from-primary/20 to-primary-glow/20"
+      gradient: "from-blue-50 to-blue-100"
     },
     {
       icon: Users,
       title: "Global Network",
       description: "Connect with mentors and mentees from around the world across different industries and expertise levels.",
-      gradient: "from-secondary/20 to-secondary-glow/20"
+      gradient: "from-blue-50 to-blue-100"
     },
     {
       icon: MessageSquare,
       title: "Secure Messaging",
       description: "Built-in secure messaging system to communicate safely and effectively with your mentorship partners.",
-      gradient: "from-primary-glow/20 to-secondary/20"
-    },
-    {
-      icon: Calendar,
-      title: "Smart Scheduling",
-      description: "Intelligent scheduling that considers time zones and availability to find the perfect meeting times.",
-      gradient: "from-secondary-glow/20 to-primary/20"
+      gradient: "from-blue-50 to-blue-100"
     },
     {
       icon: Shield,
       title: "Verified Profiles",
       description: "All mentors are verified for authenticity and expertise to ensure quality mentorship experiences.",
-      gradient: "from-primary/20 to-secondary-glow/20"
-    },
-    {
-      icon: Zap,
-      title: "Instant Notifications",
-      description: "Real-time notifications for new matches, messages, and meeting requests to stay connected.",
-      gradient: "from-secondary/20 to-primary-glow/20"
+      gradient: "from-blue-50 to-blue-100"
     }
   ];
 
@@ -51,26 +39,26 @@ export const FeaturesSection = () => {
             <span className="text-sm font-medium text-muted-foreground">Powered by Advanced AI</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Why Choose <span className="text-gradient">MentorMatch.AI</span>
+            Why Choose <span className="text-blue-600">MentorMatch.AI</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Experience the future of mentorship with our cutting-edge features designed to create meaningful connections.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
               <Card 
                 key={feature.title} 
-                className="card-profile group relative overflow-hidden"
+                className="p-8 group relative overflow-hidden border border-gray-200 hover:shadow-lg transition-all"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
                 
                 <div className="relative z-10 space-y-4">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg">
+                  <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   
